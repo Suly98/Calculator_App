@@ -9,6 +9,6 @@ public class ValidationService {
     }
 
     public Boolean isValidNum(Double number){
-
+        return number != null && !Double.isNaN(number);
     }
 }
