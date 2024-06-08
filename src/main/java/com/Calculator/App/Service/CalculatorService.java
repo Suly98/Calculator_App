@@ -1,5 +1,7 @@
 package com.Calculator.App.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.script.ScriptEngineManager;
@@ -8,12 +10,14 @@ import javax.script.ScriptException;
 @Service
 public class CalculatorService {
 
+    protected static final Logger logger = LoggerFactory.getLogger(CalculatorService.class);
+
     public String getAnswer(Double num1, String operator, Double num2) {
         double result = 0;
         try {
 
             switch (operator) {
-                case "p":
+                case "+":
                     result = num1 + num2;
                     break;
 
@@ -36,7 +40,7 @@ public class CalculatorService {
                     result = num1 % num2;
                     break;
 
-                case "^":
+                case "power":
                     result = Math.pow(num1,num2);
                     break;
 
