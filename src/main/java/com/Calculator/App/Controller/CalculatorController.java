@@ -21,6 +21,14 @@ public class CalculatorController {
 
     @GetMapping("calc")
     public String getAnswer(@RequestParam Double num1, String operator, Double num2){
+        //to return a true number
+        if(!validationService.isValidNum(num1) || (num2 != null && !validationService.isValidNum(num2))){
+            return "Invalid input number";
+        }
+        if(!validationService.isValidOperator(operator)){
+            return "Invalid input for operator";
+        }
+
         return calculatorService.getAnswer(num1,operator, num2);
     }
 }
