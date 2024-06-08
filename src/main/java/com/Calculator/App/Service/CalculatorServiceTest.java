@@ -28,5 +28,8 @@ public class CalculatorServiceTest {
 
     }
 
-
+    @Test
+    public void testInvalidOperator() {
+        assertEquals("You Used Invalid Operators.", calculatorService.getAnswer(6.0, "&", 3.0));
+    }
 }
