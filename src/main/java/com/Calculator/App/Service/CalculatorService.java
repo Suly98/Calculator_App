@@ -36,7 +36,9 @@ public class CalculatorService {
                     result = num1 % num2;
                     break;
 
-
+                case "^":
+                    result = Math.pow(num1,num2);
+                    break;
 
                 default:
                     return "You Entered the wrong input! ";
