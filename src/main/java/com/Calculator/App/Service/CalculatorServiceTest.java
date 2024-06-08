@@ -16,5 +16,17 @@ public class CalculatorServiceTest {
         assertEquals("The result of 5.0 - 3.0 is: 2.0", calculatorService.getAnswer(5.0, "-", 3.0));
     }
 
+    @Test
+    public void testMultiplication(){
+        assertEquals("Result of 5.0 * 3.0 is 15.0", calculatorService.getAnswer(5.0, "*", 3.0));
+
+    }
+
+    @Test
+    public void testDivision(){
+        assertEquals("Result of 5.0 / 5.0 is 1.0", calculatorService.getAnswer(5.0, "/", 5.0));
+
+    }
+
 
 }
