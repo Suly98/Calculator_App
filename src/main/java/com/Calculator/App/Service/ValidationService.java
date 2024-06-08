@@ -8,7 +8,7 @@ public class ValidationService {
         return operator.matches("[+/*%-^]");
     }
 
-    public Boolean isValidNum(Double num1, Double num2){
+    public Boolean isValidNum(Double number){
 
     }
 }
