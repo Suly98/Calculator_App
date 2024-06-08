@@ -8,7 +8,7 @@ import javax.script.ScriptException;
 @Service
 public class CalculatorService {
 
-    public String getAnswer(Double num1,String operator, Double num2) {
+    public String getAnswer(Double num1, String operator, Double num2) {
         double result = 0;
         try {
 
@@ -26,18 +26,24 @@ public class CalculatorService {
                     break;
 
                 case "/":
-                    if(num2 == 0){
+                    if (num2 == 0) {
                         return "Cannot divide by ZERO!";
                     }
                     result = num1 / num2;
                     break;
+
+                case "%":
+                    result = num1 % num2;
+                    break;
+
+
 
                 default:
                     return "You Entered the wrong input! ";
 
 
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             return "Error on your code" + e;
         }
         return "The result of " + num1 + " " + operator + " " + num2 + " is: " + result;
