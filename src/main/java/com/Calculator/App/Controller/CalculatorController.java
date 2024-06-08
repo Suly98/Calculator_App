@@ -1,6 +1,7 @@
 package com.Calculator.App.Controller;
 
 import com.Calculator.App.Service.CalculatorService;
+import com.Calculator.App.Service.ValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,9 @@ public class CalculatorController {
 
     @Autowired
     CalculatorService calculatorService;
+
+    @Autowired
+    ValidationService validationService;
 
     @GetMapping("calc")
     public String getAnswer(@RequestParam Double num1, String operator, Double num2){
