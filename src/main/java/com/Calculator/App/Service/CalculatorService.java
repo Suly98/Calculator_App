@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 
 @Service
 public class CalculatorService {
@@ -41,7 +39,7 @@ public class CalculatorService {
                     break;
 
                 case "power":
-                    result = Math.pow(num1,num2);
+                    result = Math.pow(num1, num2);
                     break;
 
                 default:
@@ -50,8 +48,10 @@ public class CalculatorService {
 
             }
         } catch (Exception e) {
-            return "Error on your code" + e;
+            logger.error("Error occurred: ", e);
+            return "Error on your code" + e.getMessage();
         }
+        logger.info("Calculated {} {} {} = {}", num1, operator, num2, result);
         return "The result of " + num1 + " " + operator + " " + num2 + " is: " + result;
     }
 }
