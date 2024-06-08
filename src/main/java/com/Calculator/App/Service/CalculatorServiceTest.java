@@ -8,7 +8,8 @@ public class CalculatorServiceTest {
 
     @Test
     public void testAddition(){
-        assertEquals("Result of 5.0 - 3.0 = 2.0", calculatorService.getAnswer(5.0,"-", 3.0));
-
+        assertEquals("Result of 5.0 + 3.0 = 8.0", calculatorService.getAnswer(5.0,"+", 3.0));
     }
+
+
 }
