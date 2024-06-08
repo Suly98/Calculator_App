@@ -10,29 +10,36 @@ public class CalculatorService {
 
     public String getAnswer(Double num1,String operator, Double num2) {
         double result = 0;
+        try {
 
-        switch (operator) {
-            case "plus":
-                result = num1 + num2;
-                break;
+            switch (operator) {
+                case "p":
+                    result = num1 + num2;
+                    break;
 
-            case "-" :
-                result = num1 - num2;
-                break;
+                case "-":
+                    result = num1 - num2;
+                    break;
 
-            case "*" :
-                result = num1 * num2;
-                break;
+                case "*":
+                    result = num1 * num2;
+                    break;
 
-            case "/" :
-                result = num1 / num2;
-                break;
+                case "/":
+                    if(num2 == 0){
+                        return "Cannot divide by ZERO!";
+                    }
+                    result = num1 / num2;
+                    break;
 
-            default:
-                System.out.println("You Entered the wrong input! ");
+                default:
+                    return "You Entered the wrong input! ";
 
+
+            }
+        } catch (Exception e){
+            return "Error on your code" + e;
         }
-        return "The result " + num1 + " " + operator + " "
-                + num2 + " is equal to: " + result;
+        return "The result of " + num1 + " " + operator + " " + num2 + " is: " + result;
     }
 }
