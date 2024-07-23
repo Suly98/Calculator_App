@@ -44,8 +44,6 @@ public class CalculatorService {
 
                 default:
                     return "You Entered the wrong input! ";
-
-
             }
         } catch (Exception e) {
             logger.error("Error occurred: ", e);
